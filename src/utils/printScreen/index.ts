@@ -1,4 +1,4 @@
-import { SIZE_SCREEN } from '../../constants'
+const SIZE_SCREEN = 200
 
 export const getPosition = (screen: number, position: number) => {
   if (position - SIZE_SCREEN / 2 < 0) {

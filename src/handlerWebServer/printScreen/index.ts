@@ -1,21 +1,10 @@
 import { mouse, Region, screen } from '@nut-tree/nut-js'
 import Jimp from 'jimp'
 import { getPosition } from '../../utils'
-import { SIZE_SCREEN } from '../../constants'
 
-// const SIZE_SCREEN = 200
+const SIZE_SCREEN = 200
 
 export const prnt_scrn = async () => {
-  // const getPosition = (screen: number, position: number) => {
-  //   if (position - SIZE_SCREEN / 2 < 0) {
-  //     return 0
-  //   }
-  //   if (position + SIZE_SCREEN > screen) {
-  //     return screen - SIZE_SCREEN
-  //   }
-  //   return position - SIZE_SCREEN / 2
-  // }
-
   const position = await mouse.getPosition()
   const [screenWidth, screenHeight] = [await screen.width(), await screen.height()]
 

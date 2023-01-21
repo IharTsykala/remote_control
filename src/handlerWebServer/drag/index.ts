@@ -1,8 +1,7 @@
 import { Button, down, left, mouse, Point, right, up } from '@nut-tree/nut-js'
+import { IGetMouseDrag } from '../../interfaces/actionMouse'
 
-// import { IGetMouseDrag } from '../../interfaces'
-
-export const getMouseDrag: any = (direction: any) => mouse.drag(direction)
+export const getMouseDrag: IGetMouseDrag = (direction) => mouse.drag(direction)
 
 export const draw_rectangle = async (pixels: number, additionalPixels = 100) => {
   await getMouseDrag(right(additionalPixels))
@@ -12,10 +11,6 @@ export const draw_rectangle = async (pixels: number, additionalPixels = 100) => 
 }
 
 export const draw_square = async (pixels: number) => {
-  // await getMouseDrag(right(pixels))
-  // await getMouseDrag(down(pixels))
-  // await getMouseDrag(left(pixels))
-  // await getMouseDrag(up(pixels))
   await draw_rectangle(pixels, pixels)
 }
 
