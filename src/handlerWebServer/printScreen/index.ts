@@ -1,5 +1,6 @@
 import { mouse, Region, screen } from '@nut-tree/nut-js'
 import Jimp from 'jimp'
+
 import { getPosition } from '../../utils'
 
 const SIZE_SCREEN = 200

@@ -1,5 +1,6 @@
 import { Button, down, left, mouse, Point, right, up } from '@nut-tree/nut-js'
-import { IGetMouseDrag } from '../../interfaces/actionMouse'
+
+import { IGetMouseDrag } from '../../interfaces'
 
 export const getMouseDrag: IGetMouseDrag = (direction) => mouse.drag(direction)
 

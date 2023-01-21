@@ -1,14 +1,13 @@
 import { ACTIONS_MOUSE_CLICK } from './constants'
-import { IHandlerWebServer } from '../interfaces/actionMouse'
+
+import { IHandlerWebServer } from '../interfaces'
 
 export const handlerWebServer = async ({ frontData }: IHandlerWebServer) => {
   const [command, pixels = 0, additionalPixels = 0] = frontData.split(' ')
 
+  let response
   if (ACTIONS_MOUSE_CLICK[command]) {
-    const response = await ACTIONS_MOUSE_CLICK[command](Number(pixels), Number(additionalPixels))
-    if (response) {
-      return response
-    }
+    response = await ACTIONS_MOUSE_CLICK[command](Number(pixels), Number(additionalPixels))
   }
-  return command
+  return response ?? command
 }

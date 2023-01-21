@@ -1,11 +1,12 @@
 import { down, left, mouse, right, up } from '@nut-tree/nut-js'
 
 import { MousePosition } from '../../mousePosition'
-import { IGetMouseMove } from '../../interfaces/actionMouse'
+
+import { IGetMouseMove } from '../../interfaces'
 
 const { setMousePositionByX, setMousePositionByY, getMousePositionByX, getMousePositionByY } = new MousePosition()
 
-export const getMouseMove: IGetMouseMove = (direction: any) => mouse.move(direction)
+export const getMouseMove: IGetMouseMove = (direction) => mouse.move(direction)
 
 export const mouse_up = async (pixels: number) => {
   await getMouseMove(up(pixels))

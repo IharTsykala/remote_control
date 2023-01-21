@@ -1,1 +1,1 @@
-// export { IGetMouseDrag, IGetMouseMove, IActionMouseClick, IHandlerWebServer, TActionMouseClick } from './actionMouse'
+export { IActionMouseClick, IHandlerWebServer, IGetMouseDrag, IGetMouseMove } from './actionMouse'
