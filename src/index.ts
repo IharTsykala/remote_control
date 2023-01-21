@@ -1,6 +1,6 @@
 import { handlerWebServer } from './handlerWebServer'
 
-console.log('remote_control')
+// console.log('remote_control')
 import 'dotenv/config'
 
 import { httpServer } from './http_server/index'
