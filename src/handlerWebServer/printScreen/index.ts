@@ -13,12 +13,11 @@ export const prnt_scrn = async () => {
 
   const region = new Region(leftPosition, topPosition, SIZE_SCREEN, SIZE_SCREEN)
 
-  const image = await screen.grabRegion(region)
-  const imgRGB = await image.toRGB()
-  const base64 = await Jimp.read(new Jimp(imgRGB)).then(async (img) => {
-    const imageBase64 = await img.getBase64Async(img.getMIME())
-    return imageBase64.split('data:image/png;base64,').join('')
-  })
-  console.log('base64', base64)
+  const imageGrab = await screen.grabRegion(region)
+  const imgRGB = await imageGrab.toRGB()
+  const imgJimp = await new Jimp(imgRGB)
+  const imageBase64 = await imgJimp.getBase64Async(imgJimp.getMIME())
+  const base64 = imageBase64.split('data:image/png;base64,').join('')
+
   return `prnt_scrn ${base64}`
 }
