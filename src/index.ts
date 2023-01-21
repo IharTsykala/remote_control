@@ -1,7 +1,7 @@
 import WebSocket, { WebSocketServer, createWebSocketStream } from 'ws'
 
 import { handlerWebServer } from './handlerWebServer'
-import { httpServer } from './http_server/index'
+import { httpServer } from './http_server'
 import { MousePosition } from './mousePosition'
 
 import 'dotenv/config'
