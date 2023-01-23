@@ -29,8 +29,10 @@ export const mouse_left = async (pixels: number) => {
 }
 
 export const mouse_position = async () => {
-  const mousePositionByX = getMousePositionByX()
-  const mousePositionByY = getMousePositionByY()
+  const { x: mousePositionByX, y: mousePositionByY } = await mouse.getPosition()
+
+  getMousePositionByX()
+  getMousePositionByY()
 
   return `mouse_position ${mousePositionByX}px,${mousePositionByY}px`
 }
